@@ -18,7 +18,7 @@ export default function Footer() {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   return (
-    <View style={tw`mx-4`}>
+    <View style={tw`mx-1 my-1`}>
       <View style={tw`absolute bottom-0 left-0 right-0 z-50`}>
         <View
           style={tw`flex-row justify-between items-center bg-white h-16 px-4 rounded-3xl shadow-md`}

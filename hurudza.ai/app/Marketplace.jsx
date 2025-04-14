@@ -9,9 +9,8 @@ import Footer from "@/Components/Footer";
 import { Chart } from "@/Components/Chart";
 import Order from "@/Components/Order";
 import SearchProduct from "@/Components/SearchProduct";
-import Product from "@/Components/Product";
 import MarketItems from "@/Components/MarkerItems";
-
+import Product from "@/Components/Product";
 
 
 
@@ -26,6 +25,7 @@ export default function Marketplace() {
             <SearchProduct />
            
             <MarketItems />
+            <Product />
       
       
          
