@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import tw from 'tailwind-react-native-classnames';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import TypeWriter from 'react-native-typewriter';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
+import * as Font from 'expo-font';
+import AppLoading from 'expo-app-loading';
+import tw from 'tailwind-react-native-classnames';
 
 const phrases = [
   'Empowering African farmers...',
@@ -16,8 +18,14 @@ type RootStackParamList = {
   Home: undefined;
 };
 
+const loadFonts = () =>
+  Font.loadAsync({
+    'RobotoSlab-Medium': require('../assets/fonts/RobotoSlab-Medium.ttf'),
+  });
+
 const IndexPage = () => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const [fontsLoaded, setFontsLoaded] = useState(false);
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   useEffect(() => {
@@ -27,40 +35,50 @@ const IndexPage = () => {
     return () => clearInterval(interval);
   }, []);
 
+  if (!fontsLoaded) {
+    return (
+      <AppLoading
+        startAsync={loadFonts}
+        onFinish={() => setFontsLoaded(true)}
+        onError={console.warn}
+      />
+    );
+  }
+
   return (
-    <View style={[tw`flex-1 px-6 justify-center relative`, { backgroundColor: '#EEF2F5' }]}>
+    <View style={[tw`flex-1 mx-2 justify-center relative`, { backgroundColor: '#EEF2F5' }]}>
       {/* Centered Content */}
       <View style={tw`items-center`}>
-        {/* TypeWriter for Welcome Text */} <Text></Text>
+        {/* TypeWriter Welcome Text */}
         <TypeWriter
           typing={1}
           maxDelay={40}
-          style={tw`text-4xl font-bold text-center text-gray-900`}
+          style={{ fontFamily: 'RobotoSlab-Medium', fontSize: 30, textAlign: 'center', color: '#32CD32' }}
         >
-           <Text style={{ color: '#32CD32' }}>Hello Farmer 👋</Text>
+          Hello Farmer 👋
         </TypeWriter>
 
         {/* Rotating Phrase */}
-        <Text style={[tw`text-3xl font-bold text-center`, { color: '#32CD32' }]}>
-  Welcome to Hurudza AI
-</Text>
-<Text style={[tw`text-sm mt-1 font-bold text-center`, { color: '#32CD32' }]}>Smart solutions for agriculture problems</Text>
+        <Text style={{ fontFamily: 'RobotoSlab-Medium', fontSize: 26, textAlign: 'center', color: '#32CD32', marginTop: 10 }}>
+          Welcome to Hurudza AI
+        </Text>
 
-        {/* Description */}
-      
+        <Text style={{ fontFamily: 'RobotoSlab-Medium', fontSize: 14, textAlign: 'center', color: '#32CD32', marginTop: 5 }}>
+          Smart solutions for agriculture problems
+        </Text>
       </View>
 
       {/* Button at Bottom */}
-      <View style={tw`absolute bottom-10 w-full items-center`}>
+      <View style={tw`absolute bottom-10 w-full`}>
         <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('Home')}>
           <LinearGradient
             colors={['#38a169', '#a3e635']}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 1 }}
-            style={tw`w-[80%] py-4 rounded-xl shadow-md`}
+            style={tw`w-full py-4 rounded-xl shadow-md`}
           >
-            <Text style={tw`text-white mx-2 font-bold text-center text-base`}>
-              Explore Hurudza AI→
+            <Text style={{ fontFamily: 'RobotoSlab-Medium', color: 'white', textAlign: 'center', fontSize: 16 }}>
+              Explore Hurudza AI →
             </Text>
           </LinearGradient>
         </TouchableOpacity>

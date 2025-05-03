@@ -11,7 +11,7 @@ type RootStackParamList = {
   Home: undefined;
   Plant: undefined;
   Marketplace: undefined;
-  GetPartners: undefined;
+  Partners: undefined;
 };
 
 export default function Footer() {
@@ -43,7 +43,7 @@ export default function Footer() {
 
           <TouchableOpacity
             style={tw`items-center`}
-            onPress={() => navigation.navigate("GetPartners")}
+            onPress={() => navigation.navigate("Partners")}
           >
             <MaterialCommunityIcons
               name="account-group-outline"
