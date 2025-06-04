@@ -17,7 +17,7 @@ export default function MarketItems() {
       </View>
       <View style={tw`bg-green-200 px-2 py-2 rounded-lg`}>
         <Text style={[tw`text-sm`, { fontFamily: 'RobotoSlab-Medium' }]}>
-          Equipments
+          Equipment
         </Text>
       </View>
     </View>

@@ -28,11 +28,7 @@ export default function Footer() {
             <Text style={tw`text-green-600 text-xs mt-1`}>Home</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={tw`items-center`} onPress={() => navigation.navigate("Plant")}>
-            <EvilIcons name="camera" size={28} color="green" />
-            <Text style={tw`text-green-600 text-xs mt-1`}>Plant</Text>
-          </TouchableOpacity>
-
+   
           <TouchableOpacity
             style={tw`items-center`}
             onPress={() => navigation.navigate("Marketplace")}

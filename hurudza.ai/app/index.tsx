@@ -26,6 +26,7 @@ const loadFonts = () =>
 const IndexPage = () => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [fontsLoaded, setFontsLoaded] = useState(false);
+  const [typewriterKey, setTypewriterKey] = useState(0);
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   useEffect(() => {
@@ -33,6 +34,14 @@ const IndexPage = () => {
       setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
     }, 4000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const typewriterInterval = setInterval(() => {
+      setTypewriterKey(prev => prev + 1);
+    }, 3000); // Restart every 3 seconds
+
+    return () => clearInterval(typewriterInterval);
   }, []);
 
   if (!fontsLoaded) {
@@ -51,8 +60,10 @@ const IndexPage = () => {
       <View style={tw`items-center`}>
         {/* TypeWriter Welcome Text */}
         <TypeWriter
+          key={typewriterKey}
           typing={1}
           maxDelay={40}
+          minDelay={20}
           style={{ fontFamily: 'RobotoSlab-Medium', fontSize: 30, textAlign: 'center', color: '#32CD32' }}
         >
           Hello Farmer 👋
