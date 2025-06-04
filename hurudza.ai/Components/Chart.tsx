@@ -3,13 +3,13 @@ import { View, Text, TouchableOpacity } from "react-native";
 import tw from "tailwind-react-native-classnames";     
 export const Chart = () => {
     const barData = [
-        {value: 250, label: 'Maize'},
-        {value: 500, label: 'Rice', frontColor: '#32CD32'},
-        {value: 745, label: 'Saya beans', frontColor: '#32CD32'},
-        {value: 320, label: 'Wheat'},
-        {value: 600, label: 'Tobacco', frontColor: '#32CD32'},
-        {value: 256, label: 'Cotton'},
-        {value: 100, label: 'Ground nuts'},
+        {value: 376.48, label: 'Maize'},
+        {value: 376, label: 'Traditional grains', frontColor: '#32CD32'},
+        {value: 451, label: 'Wheat', frontColor: '#32CD32'},
+        {value: 668, label: 'Sunflower'},
+        {value: 580, label: 'Soya Beans', frontColor: '#32CD32'},
+        {value: 800, label: 'Sesame'},
+        {value: 451, label: 'Wheat Starndard'},
    
     ];
     return (
