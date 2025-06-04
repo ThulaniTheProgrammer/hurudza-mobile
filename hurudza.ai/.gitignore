@@ -52,3 +52,21 @@ store.jfm
 *.tmp
 Temp/
 Temporary/
+
+# Additional Windows system files
+*.jfm
+*.ldb
+*.log
+*.tmp
+*.temp
+*.swp
+*~
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
