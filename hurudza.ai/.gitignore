@@ -47,3 +47,8 @@ Windows/
 Comms/
 UnistoreDB/
 store.jfm
+
+# Windows temporary files
+*.tmp
+Temp/
+Temporary/
