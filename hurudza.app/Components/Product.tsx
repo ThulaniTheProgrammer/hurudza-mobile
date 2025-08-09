@@ -1,0 +1,137 @@
+import React from "react";
+import { View, Text, ScrollView } from "react-native";
+import tw from "tailwind-react-native-classnames";
+import { Image } from 'react-native';
+
+export default function Product() {
+  return (
+    <ScrollView contentContainerStyle={tw`p-2 mt-8`}>
+      <View style={[tw`flex-row flex-wrap justify-between`, { gap: 8 }]}>
+
+        <View style={[tw`bg-white rounded-xl mb-4 overflow-hidden`, { width: '48%' }]}>
+          {/* Image Section */}
+          <View style={tw`h-40 justify-center items-center`}>
+            <Image
+              style={{ width: '100%', height: '100%' }}
+              resizeMode="cover"
+              source={{ uri: 'data:image/jpeg;base64,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' }}
+            />
+          </View>
+
+          {/* Product Name */}
+          <View style={tw`p-2`}>
+            <Text style={tw`text-lg font-semibold`}>Mbizi</Text>
+
+            {/* Price */}
+            <Text style={tw`text-sm text-gray-700 mt-1`}>Price: $38.00</Text>
+
+            {/* Quantity */}
+            <Text style={tw`text-sm text-gray-700 mt-1`}>Quantity: 1</Text>
+          </View>
+        </View>
+        <View style={[tw`bg-white rounded-xl mb-4 overflow-hidden`, { width: '48%' }]}>
+          {/* Image Section */}
+          <View style={tw`h-40 justify-center items-center`}>
+            <Image
+              style={{ width: '100%', height: '100%' }}
+              resizeMode="cover"
+              source={{ uri: 'https://www.seedcoonlineshop.com/zw/wp-content/uploads/2024/05/sc-w9101.jpg' }}
+            />
+          </View>
+
+          {/* Product Name */}
+          <View style={tw`p-2`}>
+            <Text style={tw`text-lg font-semibold`}>Certified Wheat</Text>
+
+            {/* Price */}
+            <Text style={tw`text-sm text-gray-700 mt-1`}>Price: $38.00</Text>
+
+            {/* Quantity */}
+            <Text style={tw`text-sm text-gray-700 mt-1`}>Quantity: 1</Text>
+          </View>
+        </View>
+
+        <View style={[tw`bg-white rounded-xl mb-4 overflow-hidden`, { width: '48%' }]}>
+          {/* Image Section */}
+          <View style={tw`h-40 justify-center items-center`}>
+            <Image
+              style={{ width: '100%', height: '100%' }}
+              resizeMode="cover"
+              source={{ uri: 'https://scontent.fhre1-1.fna.fbcdn.net/v/t39.30808-6/502636000_24217221964548594_1896344662511728097_n.jpg?stp=c0.156.607.607a_dst-jpg_s261x260_tt6&_nc_cat=108&ccb=1-7&_nc_sid=454cf4&_nc_ohc=c7gVcHSUABsQ7kNvwEZyqA0&_nc_oc=AdkZuDkVvnGltvY4CXT82jDJ-03NN2uT2LsFgB1hpRecGBJ7fZYzhycaReIIqfXKxp0&_nc_zt=23&_nc_ht=scontent.fhre1-1.fna&_nc_gid=volW8g2mv2AWfKpuSptKbQ&oh=00_AfLwFHQ0geeJ0Wjny1ZfbdAReTXmsBzcWGvAv0TMRWP4oQ&oe=684532E4' }}  />
+          </View>
+
+          {/* Product Name */}
+          <View style={tw`p-2`}>
+            <Text style={tw`text-lg font-semibold`}>Organic Fertiliser</Text>
+
+            {/* Price */}
+            <Text style={tw`text-sm text-gray-700 mt-1`}>Price: $15 000.00</Text>
+
+            {/* Quantity */}
+            <Text style={tw`text-sm text-gray-700 mt-1`}>Quantity: 1</Text>
+          </View>
+        </View>
+        <View style={[tw`bg-white rounded-xl mb-4 overflow-hidden`, { width: '48%' }]}>
+          {/* Image Section */}
+          <View style={tw`h-40 justify-center items-center`}>
+            <Image
+              style={{ width: '100%', height: '100%' }}
+              resizeMode="cover"
+              source={{ uri: 'https://www.valleyseeds.co.zw/images/products/pan-7m.webp' }}/>
+          </View>
+
+          {/* Product Name */}
+          <View style={tw`p-2`}>
+            <Text style={tw`text-lg font-semibold`}>Valley Seeds</Text>
+
+            {/* Price */}
+            <Text style={tw`text-sm text-gray-700 mt-1`}>Price: $30.00</Text>
+
+            {/* Quantity */}
+            <Text style={tw`text-sm text-gray-700 mt-1`}>Quantity: 1</Text>
+          </View>
+        </View>
+        <View style={[tw`bg-white rounded-xl mb-4 overflow-hidden`, { width: '48%' }]}>
+          {/* Image Section */}
+          <View style={tw`h-40 justify-center items-center`}>
+            <Image
+              style={{ width: '100%', height: '100%' }}
+              resizeMode="cover"
+              source={{ uri: 'https://scontent.fhre1-2.fna.fbcdn.net/v/t45.5328-4/486549186_544459428672453_1602316180501160641_n.jpg?stp=c0.43.261.261a_dst-jpg_p261x260_tt6&_nc_cat=109&ccb=1-7&_nc_sid=247b10&_nc_ohc=F1mon9rqvVsQ7kNvwHEQ91N&_nc_oc=Adnx3pEFclXoFsKO_QWxVqo--I5R0fC7B3HaUJTQJA7186DACF3GQF6au4ck7d88jNQ&_nc_zt=23&_nc_ht=scontent.fhre1-2.fna&_nc_gid=Q3vuZGqNWKOlU1urTiVsow&oh=00_AfLFtMARrdOrBPpXyI4HalsLxM9X1ABbB_JyTursNSp2rA&oe=684525BB' }}/>
+          </View>
+
+          {/* Product Name */}
+          <View style={tw`p-2`}>
+            <Text style={tw`text-lg font-semibold`}>Tractor</Text>
+
+            {/* Price */}
+            <Text style={tw`text-sm text-gray-700 mt-1`}>Price: $9000.00</Text>
+
+            {/* Quantity */}
+            <Text style={tw`text-sm text-gray-700 mt-1`}>Quantity: 1</Text>
+          </View>
+        </View>
+        <View style={[tw`bg-white rounded-xl mb-4 overflow-hidden`, { width: '48%' }]}>
+          {/* Image Section */}
+          <View style={tw`h-40 justify-center items-center`}>
+            <Image
+              style={{ width: '100%', height: '100%' }}
+              resizeMode="cover"
+              source={{ uri: 'https://scontent.fhre1-2.fna.fbcdn.net/v/t45.5328-4/497937613_1759830651296712_1769680311442151797_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=110&ccb=1-7&_nc_sid=247b10&_nc_ohc=OWOFhNsXg_UQ7kNvwE2s1SZ&_nc_oc=Adl9DGe0nR8CyJwFpMHHetJy51aXbAa0p_PRI4fvllYIDwk5VxvdVbaRqlZ9QEEJQrI&_nc_zt=23&_nc_ht=scontent.fhre1-2.fna&_nc_gid=kB9zMiECjFNiPqvYUYxL7g&oh=00_AfId6A7Xnn30foMFzEcQU5bAmIysQUhy2W1drWKP6_LXDA&oe=68452C00' }} />
+          </View>
+
+          {/* Product Name */}
+          <View style={tw`p-2`}>
+            <Text style={tw`text-lg font-semibold`}>Product Name</Text>
+
+            {/* Price */}
+            <Text style={tw`text-sm text-gray-700 mt-1`}>Price: $30.00</Text>
+
+            {/* Quantity */}
+            <Text style={tw`text-sm text-gray-700 mt-1`}>Quantity: 1</Text>
+          </View>
+        </View>
+      </View>
+    </ScrollView>
+  );
+}
