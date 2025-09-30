@@ -30,6 +30,21 @@ yarn-error.*
 .DS_Store
 *.pem
 
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Windows AppData and system directories
+AppData/
+Local/
+LocalLow/
+Roaming/
+Microsoft/
+Packages/
+
 # local env files
 .env*.local
 
