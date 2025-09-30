@@ -1,12 +1,9 @@
-import React from "react";
-import { View, ScrollView, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import tw from "tailwind-react-native-classnames";
-import MainHeader from "@/Components/Header";
-import Footer from "@/Components/Footer";
-import MarketCard from "@/Components/MarketCard";
-import PartnerItems from "@/Components/PartnerItems";
-
-
+import Footer from "../Components/Footer";
+import MainHeader from "../Components/Header";
+import MarketCard from "../Components/MarketCard";
+import PartnerItems from "../Components/PartnerItems";
 
 
 
